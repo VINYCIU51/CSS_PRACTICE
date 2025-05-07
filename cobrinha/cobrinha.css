@@ -1,0 +1,13 @@
+body {
+    height: 100vh;
+    background: url(/cobrinha/space.jpg) center / cover no-repeat;
+}
+
+.ball {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(49, 173, 0);
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+}
