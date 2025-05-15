@@ -1,0 +1,263 @@
+body {
+    background-color: #cff1ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* espaco do carro animado */
+.window {
+    position: relative;
+    height: 300px;
+    width: 600px;
+    background-color: rgb(117, 153, 253);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 10px solid rgb(39, 39, 39);
+}
+
+/* estrada */
+.ground {
+    position: absolute;
+    bottom: 0px;
+    height: 80px;
+    width: 100%;
+    background-color: rgb(43, 43, 43);
+
+    /* marcacao da estrada */
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -30%;
+        width: 300%;
+        height: 10px;
+        background: repeating-linear-gradient(to right,
+                rgb(170, 170, 0) 0px, rgb(170, 170, 0) 30px,
+                transparent 30px, transparent 60px);
+        animation: moveRoad 10s infinite linear;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        background-color: rgb(17, 209, 27);
+        top: -1;
+        height: 10px;
+        width: 100%;
+    }
+}
+
+/* nuvens */
+.cloud {
+    position: absolute;
+    top: 70px;
+    left: 30px;
+    height: 40px;
+    width: 150px;
+    background-color: aliceblue;
+    border-radius: 50px;
+    animation: moveClouds 15s linear infinite;
+
+    &::before,
+    &::after {
+        background-color: aliceblue;
+        border-radius: 50%;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -45px;
+        left: 20px;
+        height: 70px;
+        width: 70px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -25px;
+        left: 80px;
+        height: 50px;
+        width: 50px;
+    }
+
+    &.cloud-2 {
+        left: 250px;
+        top: 100px;
+        transform: scale(0.8);
+    }
+
+    &.cloud-3 {
+        left: 450px;
+        top: 50px;
+        transform: scale(1.2);
+    }
+
+    &.cloud-4 {
+        left: 700px;
+        top: 80px;
+        transform: scale(1.1);
+    }
+
+    &.cloud-5 {
+        left: 900px;
+        top: 60px;
+        transform: scale(0.9);
+    }
+}
+
+/* arvores */
+.tree {
+    position: absolute;
+    bottom: 80px;
+    left: -10px;
+    height: 50px;
+    width: 15px;
+    background-color: brown;
+    animation: moveTrees 10s infinite linear;
+
+    /* folhas */
+    .leaves {
+        position: absolute;
+        top: -30px;
+        left: -25px;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        background-color: green;
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 35px;
+            width: 35px;
+            top: 20px;
+            right: -15px;
+            background-color: rgba(4, 134, 4, 0.788);
+            border-radius: 50%;
+        }
+    }
+
+    &.tree-2 {
+        left: 200px;
+        bottom: 70px;
+        transform: scale(0.8);
+    }
+
+    &.tree-3 {
+        left: 450px;
+        transform: scale(1.1);
+    }
+
+    &.tree-4 {
+        left: 650px;
+        bottom: 60px;
+        transform: scale(0.9);
+    }
+
+    &.tree-5 {
+        left: 800px;
+        bottom: 80px;
+        transform: scale(1.2);
+    }
+}
+
+/* carro */
+.car {
+    position: absolute;
+    height: 15px;
+    width: 55px;
+    background-color: red;
+    bottom: 50px;
+    left: 250px;
+    border-radius: 5px;
+    animation: moveCar 0.8s infinite;
+
+    /* cabine de motorista */
+    .cabine {
+        position: absolute;
+        height: 15px;
+        width: 30px;
+        background-color: red;
+        bottom: 15px;
+        left: 12px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 60%;
+    }
+
+    /* janela */
+    .car-window {
+        position: absolute;
+        height: 10px;
+        width: 15px;
+        background: linear-gradient(to right, rgb(108, 221, 255), rgb(201, 241, 253));
+        bottom: 16px;
+        left: 25px;
+        z-index: 2;
+        border-top-right-radius: 60%;
+    }
+
+    /* rodas do carro */
+    .wheel {
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background: radial-gradient(circle 5px, rgb(255, 255, 255), black);
+        bottom: -5px;
+        left: 3px;
+
+        &.wheel-2 {
+            bottom: -5px;
+            left: 36px;
+        }
+    }
+}
+
+
+/* animacoes */
+@keyframes moveClouds {
+    0% {
+        transform: translateX(600px);
+    }
+
+    100% {
+        transform: translateX(-600px);
+    }
+}
+
+@keyframes moveTrees {
+    0% {
+        transform: translateX(600px);
+    }
+
+    100% {
+        transform: translateX(-600px);
+    }
+}
+
+@keyframes moveRoad {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes moveCar {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
