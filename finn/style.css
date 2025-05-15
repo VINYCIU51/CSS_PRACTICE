@@ -1,0 +1,94 @@
+/* Reset padrao*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* corpo da pagina */
+body {
+    background: #202020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* cabeça do finn */
+.head {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    background: #e5e5e5;
+    border-radius: 45% 45% 0 0/25% 25% 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        background: inherit;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    /* orelhas */
+    &::before {
+        width: 100px;
+        height: 310px;
+        border-radius: 50px 50px 0 0;
+        box-shadow: 300px 0 #e5e5e5;
+    }
+
+    /* parte de baixo da cabeça */
+    &::after {
+        width: 400px;
+        height: 80px;
+        background: #e5e5e5;
+        bottom: -40px;
+        border-radius: 50%;
+    }
+
+
+}
+
+/* rosto */
+.face {
+    background: #e9bfb8;
+    border-radius: 50%;
+    width: 350px;
+    height: 200px;
+    transform: translateY(10%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* olhos */
+    .eyes {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 200px;
+
+        & div {
+            width: 30px;
+            height: 30px;
+            background: black;
+            border-radius: 50%;
+        }
+    }
+
+    /* soriso */
+    .smile {
+        background: transparent;
+        width: 120px;
+        height: 30px;
+        border-radius: 50%;
+        box-shadow: 0 10px black;
+    }
+}
