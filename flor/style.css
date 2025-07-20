@@ -1,9 +1,11 @@
+/* reset padrao */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* configuracoes do body */
 body {
     background: rgba(0, 116, 77, 0.815);
     height: 100vh;
@@ -13,10 +15,12 @@ body {
     justify-content: center;
 }
 
-.flor {
+/* definicao da div maior para servir de ancora */
+.flower {
     position: relative;
 }
 
+/* estilizacao do centro da flor */
 .center {
     background: rgb(250, 226, 160);
     height: 80px;
@@ -25,6 +29,7 @@ body {
     z-index: 1;
 }
 
+/* estilizacao geral das petalas */
 .petal {
     position: absolute;
     background: linear-gradient(180deg, rgb(253, 41, 41), rgb(56, 0, 0));
@@ -35,6 +40,7 @@ body {
     z-index: -1;
 }
 
+/* estilizacao e posicionamento de cada uma das petalas */
 .p8 {
     background: linear-gradient(180deg, rgb(255, 68, 68), rgb(95, 4, 4));
     rotate: 90deg;
