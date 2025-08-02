@@ -100,3 +100,40 @@ body {
     transform: translate(-50%);
     z-index: -2;
 }
+
+.leaf {
+    background: linear-gradient(180deg, rgb(2, 136, 13), rgb(6, 66, 0));
+    height: 140px;
+    width: 60px;
+    border-radius: 50% 50% 30% 50%;
+    transform: rotate(-45deg);
+    position: absolute;
+    bottom: -350%;
+    left: -55%;
+    z-index: -3;
+}
+
+.grass {
+    width: 40px;
+    height: 100px;
+    background: linear-gradient(180deg, rgb(2, 136, 13), rgb(6, 66, 0));
+    position: relative;
+    bottom: -40%;
+    left: -80px;
+    border-radius: 10% 80% 0% 30%;
+    transform: rotate(-15deg);
+    box-shadow: -30px -5px rgb(0, 65, 0);
+
+    &::before {
+        content: "";
+        width: 40px;
+        height: 100px;
+        background: linear-gradient(180deg, rgb(2, 136, 13), rgb(6, 66, 0));
+        position: absolute;
+        left: 40px;
+        bottom: -8px;
+        transform: rotate(15deg);
+        border-radius: 80% 10% 30% 0%;
+        box-shadow: 30px 0px rgb(0, 77, 0);
+    }
+}
